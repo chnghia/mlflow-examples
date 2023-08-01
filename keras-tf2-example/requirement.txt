@@ -1,0 +1,9 @@
+mlflow>=1.30.0
+tensorflow
+keras
+onnx
+onnxmltools
+onnxruntime
+keras2onnx
+Pillow
+boto3

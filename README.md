@@ -1,7 +1,27 @@
 # mlflow-examples
 
+## Example run docker (keras-tf2-example)
 
-## Example run local
+1. Build docker image
+
+    ```bash
+    docker build -f Dockerfile -t keras-tf2-example .
+    ```
+
+2. Confirm environment variables & MinIO credentials
+
+3. Train mlflow model with docker container
+
+    ```bash
+    pip install mlflow[extras]
+    ```
+
+    ```bash
+    cd keras-tf2-example
+    mlflow run . --build-image
+    ```
+
+## Example run local (scikit-learn-example)
 
 1. Install [conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
@@ -30,7 +50,8 @@
 5. Train a sample MLflow model
 
     ```bash
-    mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=0.42
+    cd scikit-learn-example
+    mlflow run . -P alpha=0.42
     ```
 
     * Note: To fix ModuleNotFoundError: No module named 'boto3'
